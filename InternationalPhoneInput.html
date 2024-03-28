@@ -10,11 +10,13 @@
         .form-control::placeholder {
             opacity: 0.8 !important;
         }
+
         .iti.iti--allow-dropdown.iti--show-flags {
             width: calc(100% - 8px);
             margin-left: 4px;
             margin-top: 4px;
         }
+
         .error {
             margin-left: 8px;
         }
@@ -61,6 +63,10 @@
                 console.log('SENDDATA');
                 JFCustomWidget.sendData(internationalPhoneNumber);
                 console.log('SENDDATA AFTER');
+                JFCustomWidget.sendResult({
+                    valid: iti.isValidNumberPrecise(), // Consider additional validation
+                    value: internationalPhoneNumber,
+                });
             } else {
                 const errorMap = ["The phone number is invalid", "The country code is invalid", "The phone number is too short for this country", "The phone number is too long for this country", "The phone number is invalid"];
                 const errorCode = iti.getValidationError();
@@ -83,6 +89,7 @@
                     value: internationalPhoneNumber,
                 }
                 JFCustomWidget.sendSubmit(msg);
+                JFCustomWidget.sendResult(msg);
             });
         });
     </script>
