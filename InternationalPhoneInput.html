@@ -11,19 +11,24 @@
             opacity: 0.8 !important;
         }
         .iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown {
-            width: 100%;
+            width: calc(100% - 8px);
+            margin-left: 4px;
+            margin-top: 4px;
+        }
+        .error {
+            margin-left: 8px;
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class="row">
         <form novalidate>
             <div>
                 <input type="phone" class="form-control" id="phone" name="phone" oninput="handlePhoneNumberChange()"
                     onblur="handlePhoneNumberChange()">
             </div>
             <div>
-                <small class="text-danger" id="phone-error"></small>
+                <small class="error text-danger" id="phone-error"></small>
             </div>
         </form>
     </div>
