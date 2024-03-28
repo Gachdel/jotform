@@ -58,6 +58,7 @@
                 phoneInput.classList.remove("is-invalid");
                 //Update the phone number to be sent to Jotform
                 internationalPhoneNumber = iti.getNumber();
+                console.log('SENDDATA');
                 JFCustomWidget.sendData(internationalPhoneNumber);
             } else {
                 const errorMap = ["The phone number is invalid", "The country code is invalid", "The phone number is too short for this country", "The phone number is too long for this country", "The phone number is invalid"];
