@@ -38,6 +38,7 @@
         var iti;
         const phoneInput = document.querySelector("#phone");
         document.addEventListener('DOMContentLoaded', function () {
+            //Instantiate Intl-Tel-Input
             iti = window.intlTelInput(phoneInput, {
                 utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@20.3.0/build/js/utils.js",
                 initialCountry: "auto",
@@ -60,9 +61,9 @@
                 phoneInput.classList.remove("is-invalid");
                 //Update the phone number to be sent to Jotform
                 internationalPhoneNumber = iti.getNumber();
-                //Send data to the form
+                //Send the valide data to the form
                 JFCustomWidget.sendData({
-                    valid: iti.isValidNumberPrecise(), // Consider additional validation
+                    valid: iti.isValidNumberPrecise(),
                     value: internationalPhoneNumber,
                 });
             } else {
@@ -78,7 +79,6 @@
     </script>
     <script type="text/javascript">
         JFCustomWidget.subscribe("ready", function () {
-            console.log('READY3');
             JFCustomWidget.subscribe("submit", function () {
                 //When the form is submitted, send it the phone number and its validity
                 var phoneInput = document.getElementById('phone');
