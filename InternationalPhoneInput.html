@@ -65,7 +65,6 @@
                     valid: iti.isValidNumberPrecise(), // Consider additional validation
                     value: internationalPhoneNumber,
                 });
-                JFCustomWidget.sendData(internationalPhoneNumber);
                 console.log('SENDDATA AFTER');
             } else {
                 const errorMap = ["The phone number is invalid", "The country code is invalid", "The phone number is too short for this country", "The phone number is too long for this country", "The phone number is invalid"];
@@ -80,7 +79,7 @@
     </script>
     <script type="text/javascript">
         JFCustomWidget.subscribe("ready", function () {
-            console.log('READY2');
+            console.log('READY3');
             JFCustomWidget.subscribe("submit", function () {
                 console.log('SUBMIT');
                 var phoneInput = document.getElementById('phone');
