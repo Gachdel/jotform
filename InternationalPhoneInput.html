@@ -61,12 +61,12 @@
                 //Update the phone number to be sent to Jotform
                 internationalPhoneNumber = iti.getNumber();
                 console.log('SENDDATA');
-                JFCustomWidget.sendData(internationalPhoneNumber);
-                console.log('SENDDATA AFTER');
-                JFCustomWidget.sendResult({
+                JFCustomWidget.sendData({
                     valid: iti.isValidNumberPrecise(), // Consider additional validation
                     value: internationalPhoneNumber,
                 });
+                JFCustomWidget.sendData(internationalPhoneNumber);
+                console.log('SENDDATA AFTER');
             } else {
                 const errorMap = ["The phone number is invalid", "The country code is invalid", "The phone number is too short for this country", "The phone number is too long for this country", "The phone number is invalid"];
                 const errorCode = iti.getValidationError();
@@ -89,7 +89,6 @@
                     value: internationalPhoneNumber,
                 }
                 JFCustomWidget.sendSubmit(msg);
-                JFCustomWidget.sendResult(msg);
             });
         });
     </script>
