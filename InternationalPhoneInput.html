@@ -10,7 +10,7 @@
         .form-control::placeholder {
             opacity: 0.8 !important;
         }
-        .iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown {
+        .iti.iti--allow-dropdown.iti--show-flags {
             width: calc(100% - 8px);
             margin-left: 4px;
             margin-top: 4px;
@@ -24,7 +24,7 @@
     <div class="row">
         <form novalidate>
             <div>
-                <input type="phone" class="form-control" id="phone" name="phone" oninput="handlePhoneNumberChange()"
+                <input id="phone" type="phone" class="form-control" name="phone" oninput="handlePhoneNumberChange()"
                     onblur="handlePhoneNumberChange()">
             </div>
             <div>
@@ -45,12 +45,6 @@
                         .then(function (data) { callback(data.country_code); })
                         .catch(function () { callback(); });
                 },
-                hiddenInput: function (telInputName) {
-                    return {
-                        phone: "phone_full",
-                        country: "country_code"
-                    };
-                }
             });
         });
         var internationalPhoneNumber;
