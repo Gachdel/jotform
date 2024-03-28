@@ -73,11 +73,13 @@
         JFCustomWidget.subscribe("ready", function () {
         });
         JFCustomWidget.subscribe("submit", function () {
+            console.log('PLOP');
             var phoneInput = document.getElementById('phone');
             var msg = {
                 valid: iti.isValidNumberPrecise(), // Consider additional validation
                 value: internationalPhoneNumber,
             }
+            console.log(msg);
             JFCustomWidget.sendSubmit(msg);
         });
     </script>
