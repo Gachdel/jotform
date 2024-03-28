@@ -10,11 +10,14 @@
         .form-control::placeholder {
             opacity: 0.8 !important;
         }
+        .iti.iti--allow-dropdown.iti--show-flags.iti--inline-dropdown {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
-    <div class="row">
-        <form class="row" novalidate>
+    <div>
+        <form novalidate>
             <div>
                 <input type="phone" class="form-control" id="phone" name="phone" oninput="handlePhoneNumberChange()"
                     onblur="handlePhoneNumberChange()">
