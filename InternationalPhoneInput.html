@@ -60,6 +60,7 @@
                 internationalPhoneNumber = iti.getNumber();
                 console.log('SENDDATA');
                 JFCustomWidget.sendData(internationalPhoneNumber);
+                console.log('SENDDATA AFTER');
             } else {
                 const errorMap = ["The phone number is invalid", "The country code is invalid", "The phone number is too short for this country", "The phone number is too long for this country", "The phone number is invalid"];
                 const errorCode = iti.getValidationError();
