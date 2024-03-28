@@ -72,14 +72,16 @@
     </script>
     <script type="text/javascript">
         JFCustomWidget.subscribe("ready", function () {
-        });
-        JFCustomWidget.subscribe("submit", function () {
-            var phoneInput = document.getElementById('phone');
-            var msg = {
-                valid: iti.isValidNumberPrecise(), // Consider additional validation
-                value: internationalPhoneNumber,
-            }
-            JFCustomWidget.sendSubmit(msg);
+            console.log('READY');
+            JFCustomWidget.subscribe("submit", function () {
+                console.log('SUBMIT');
+                var phoneInput = document.getElementById('phone');
+                var msg = {
+                    valid: iti.isValidNumberPrecise(), // Consider additional validation
+                    value: internationalPhoneNumber,
+                }
+                JFCustomWidget.sendSubmit(msg);
+            });
         });
     </script>
 </body>
