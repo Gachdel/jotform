@@ -90,6 +90,20 @@
                 tooShort: "Het telefoonnummer is te kort voor dit land",
                 tooLong: "Het telefoonnummer is te lang voor dit land",
                 invalidNumberDefault: "Het telefoonnummer is ongeldig"
+            },
+            tr: {
+                invalidNumber: "Telefon numarası geçersiz",
+                invalidCountryCode: "Ülke kodu geçersiz",
+                tooShort: "Telefon numarası bu ülke için çok kısa",
+                tooLong: "Telefon numarası bu ülke için çok uzun",
+                invalidNumberDefault: "Telefon numarası geçersiz"
+            },
+            ar: {
+                invalidNumber: "رقم الهاتف غير صالح",
+                invalidCountryCode: "رمز الدولة غير صالح",
+                tooShort: "رقم الهاتف قصير جداً بالنسبة لهذه الدولة",
+                tooLong: "رقم الهاتف طويل جداً بالنسبة لهذه الدولة",
+                invalidNumberDefault: "رقم الهاتف غير صالح"
             }
         };
 
@@ -100,7 +114,9 @@
                 userLanguage.startsWith('es') ? 'es' :
                     userLanguage.startsWith('it') ? 'it' :
                         userLanguage.startsWith('pt') ? 'pt' :
-                            userLanguage.startsWith('nl') ? 'nl' : 'en'; // Default to English
+                            userLanguage.startsWith('nl') ? 'nl' :
+                                userLanguage.startsWith('tr') ? 'tr' :
+                                    userLanguage.startsWith('ar') ? 'ar' : 'en'; // Default to English
 
         // Display the detected language
         document.addEventListener('DOMContentLoaded', function () {
