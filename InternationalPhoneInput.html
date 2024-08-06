@@ -12,13 +12,11 @@
         .form-control::placeholder {
             opacity: 0.8 !important;
         }
-
         .iti.iti--allow-dropdown.iti--show-flags {
             width: calc(100% - 8px);
             margin-left: 4px;
             margin-top: 4px;
         }
-
         .error {
             margin-left: 8px;
         }
@@ -26,7 +24,6 @@
 </head>
 <body>
     <div class="row">
-        <p>Lang: <span id="detected-lang"></span></p>
         <form novalidate>
             <div>
                 <input id="phone" type="tel" class="form-control" name="phone" oninput="handlePhoneNumberChange()"
@@ -117,11 +114,6 @@
                             userLanguage.startsWith('nl') ? 'nl' :
                                 userLanguage.startsWith('tr') ? 'tr' :
                                     userLanguage.startsWith('ar') ? 'ar' : 'en'; // Default to English
-
-        // Display the detected language
-        document.addEventListener('DOMContentLoaded', function () {
-            document.getElementById('detected-lang').innerText = lang;
-        });
 
         function getErrorMessage(errorCode) {
             const errorMessages = translations[lang];
