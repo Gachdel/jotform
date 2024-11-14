@@ -146,7 +146,7 @@
             // Intercept the "Enter" key press for the phone input field to prevent submitting the form
             phoneInput.addEventListener("keydown", function(event) {
                 if (event.key === "Enter") {
-                    phoneInput.blur();
+                    phoneInput.blur(); // Remove the focus on the field
                     event.preventDefault(); // Prevents the form from being submitted
                 }
             });
